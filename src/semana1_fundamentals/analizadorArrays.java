@@ -5,7 +5,8 @@ public class analizadorArrays {
     public static void main(String[] args){
         //creamos un array de 5 elementos
         int[] latencia = new int[5];
-        int suma = 0,promedio,numeroServidor=0,altaLatencia=0;
+        int numeroServidor=0,altaLatencia=0;
+        double suma=0.0,promedio=0.0;
         int max = latencia[0];
         Scanner lectura = new Scanner(System.in);
 
@@ -28,7 +29,7 @@ public class analizadorArrays {
             }
         }
         lectura.close();
-        promedio = suma/latencia.length;
+        promedio = (double) suma/latencia.length;
         //localiza el servidor con mayor latencia
         for(int i=0; i<=4; i++){
             if(latencia[i]==max){
@@ -38,7 +39,7 @@ public class analizadorArrays {
         String servidorLento = String.format("La mayor latencia es de %dms en el servidor %d",max,numeroServidor);
 
         System.out.println("----------------------------------------");
-        System.out.printf("El promedio de latencia es %dms %n",promedio);
+        System.out.printf("El promedio de latencia es %.2fms %n",promedio);
         System.out.println(servidorLento);
         System.out.printf("Hay %d servidores con un latencia mayor a 100ms. La red puede ser lenta",altaLatencia);
     }
