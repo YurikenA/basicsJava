@@ -7,6 +7,7 @@ public class gestionInventario {
 
         // Corregimos el tamaño del array
         String[] inventario = new String[3];
+        boolean mouseFind = false;
 
         System.out.println("--- Registro de Periféricos ---");
 
@@ -21,12 +22,13 @@ public class gestionInventario {
         for (int i = 0; i < inventario.length; i++) {
             if (inventario[i].equals("mouse")) {
                 System.out.printf("Mouse encontrado en la posición %d",i+1);
+                mouseFind = true;
                 break;
-            }
-            else{
-                System.out.println("Mouse no encontrado");
             }
         }
         teclado.close();
+        if(!mouseFind){
+            System.out.println("Mouse no encontrado");
+        }
     }
 }
